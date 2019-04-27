@@ -25,19 +25,19 @@
     border-radius: 8px;
     color: white;
     padding: 15px 30px;
-    margin: 10px 5px;
+    margin: 5px;
     font-size: 16px;
     text-decoration: none;
     cursor: pointer;
-    float: right;
 }
 
 #accept-req:hover {
     opacity: 0.8;
 }
 
-#response {
+#body-req {
     resize: none;
     width: 100%;
-    height: 200px;
+    height: 150px;
+    margin: 10px 0px;
 }

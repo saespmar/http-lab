@@ -27,11 +27,13 @@
                         <option>OPTIONS</option>
                     </select>
                     <input id="url-req" class="round" type="text" placeholder="URL"><br>
-                    <button id="accept-req">Make request</button>
-                    <textarea id="response" class="round"></textarea>
+                    <textarea id="body-req" class="round" placeholder="Body"></textarea><br>
+                    <button id="accept-req" onclick="sendRequest()">Make request</button>                    
                 </div>
             </div>
         </div>
     </div>
+
+    <script src="js/request.js"></script>
 </body>
 </html>
