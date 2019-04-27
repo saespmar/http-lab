@@ -6,14 +6,29 @@
     <title>HTTP Lab</title>
 
     <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/details.css">
 </head>
 <body>
     <div class="outer">
         <div class="middle">
-          <div class="inner">
-            <h3>Welcome!</h3>
-            <p>This is HTTP Lab</p>
-          </div>
+            <div class="inner">
+                <div class="title">
+                    <h3>Welcome!</h3>
+                    <p>This is HTTP Lab</p>
+                </div>
+                <div class="content">
+                    <select class="round">
+                        <option>GET</option>
+                        <option>POST</option>
+                        <option>PUT</option>
+                        <option>DELETE</option>
+                        <option>HEAD</option>
+                        <option>OPTIONS</option>
+                    </select><br>
+                    <input id="url-req" class="round" type="text" placeholder="URL"><br>
+                    <textarea id="response" class="round"></textarea>
+                </div>
+            </div>
         </div>
     </div>
 </body>

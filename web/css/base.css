@@ -1,5 +1,6 @@
 body {
-    background-color: lightskyblue;
+    background-color: rgb(1, 23, 14);
+    font-family: Arial;
 }
 
 .outer {
@@ -17,6 +18,8 @@ body {
 }
   
 .inner {
+    background-color: rgb(255, 250, 244);
+    padding: 10px;
     margin-left: auto;
     margin-right: auto;
     width: 75%;
