@@ -1,5 +1,11 @@
 async function sendRequest() {
 
+    // Delete previous requests data
+    var output_div = document.getElementById("output");
+    output_div.style.display = "none";
+    var result_div = document.getElementById("result");
+    result_div.innerHTML = "";
+
     // Get the URL
     var url_req = document.getElementById('url-req');
     var url = url_req.value;
@@ -60,7 +66,10 @@ async function sendRequest() {
             }).then((data) => {
                 return data;
             }); 
-            console.log(result);
+
+            // Show the result
+            output_div.style.display = "block";
+            result_div.innerHTML = JSON.stringify(result);
         } catch (error) {
             alert("Something went wrong");
         }

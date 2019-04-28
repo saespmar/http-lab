@@ -47,3 +47,18 @@
 #accept-req:hover {
     opacity: 0.8;
 }
+
+#output {
+    margin: 20px;
+
+    /* Initially hidden */
+    display: none;
+}
+
+#result {
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
