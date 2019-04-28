@@ -49,14 +49,23 @@ async function sendRequest() {
             body_req.style.borderColor = "#a9a9a9";
         }
 
+        // Show loading icon
+        document.getElementById("overlap-loading").style.display = "block";
+
         // Async request
-        var result = await fetch(url, settings)
-        .then((response) => {
-            return response.json();
-        }).then((data) => {
-            return data;
-        }); 
-        
-        console.log(result);
+        try {
+            var result = await fetch(url, settings)
+            .then((response) => {
+                return response.json();
+            }).then((data) => {
+                return data;
+            }); 
+            console.log(result);
+        } catch (error) {
+            alert("Something went wrong");
+        }
+
+        // Hide loading icon
+        document.getElementById("overlap-loading").style.display = "none";
     }
 }
