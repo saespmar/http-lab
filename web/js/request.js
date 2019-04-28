@@ -7,11 +7,12 @@ async function sendRequest() {
     // Check if the URL parameter is filled
     if (url == "" || url == null){
         url_req.style.borderColor = "red";
-        alert("URL can't be empty");
+        document.getElementById('error-req').innerHTML = "URL can't be empty";
     } else {
 
-        // Reset the border color
+        // Reset the errors
         url_req.style.borderColor = "#a9a9a9";
+        document.getElementById('error-req').innerHTML = "";
         
         // Get the method
         var op_req = document.getElementById("op-req");
