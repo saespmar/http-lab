@@ -69,7 +69,7 @@ async function sendRequest() {
 
             // Show the result
             output_div.style.display = "block";
-            result_div.innerHTML = JSON.stringify(result);
+            result_div.innerHTML = JSON.stringify(result, null, 4);
         } catch (error) {
             alert("Something went wrong");
         }
