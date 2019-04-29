@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/details.css">
     <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="css/modal.css">
 </head>
 <body>
     <div class="outer">
@@ -19,6 +20,7 @@
                     <p>Make your own HTTP requests</p>
                 </div>
                 <div class="content">
+                    <button id="adv-set">Advanced Settings</button><br>
                     <select id="op-req" class="round">
                         <option>GET</option>
                         <option>POST</option>
@@ -41,6 +43,18 @@
         </div>
     </div>
 
+    <!-- The Modal -->
+    <div id="adv-set-mod" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Some text in the Modal..</p>
+        </div>
+
+    </div>
+
     <script src="js/request.js"></script>
+    <script src="js/modal.js"></script>
 </body>
 </html>
