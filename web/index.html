@@ -49,9 +49,42 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <p>Some text in the Modal..</p>
+            <p>
+                Mode of the request:
+                <select id="modal-mode" class="round">
+                    <option value="cors">Cors</option>
+                    <option value="no-cors">No cors</option>
+                    <option value="same-origin">Same origin</option>
+                </select>
+            </p>
+            <p>
+                Request credentials:
+                <select id="modal-credentials" class="round">
+                    <option value="omit">Omit</option>
+                    <option value="same-origin">Same origin</option>
+                    <option value="include">Include</option>
+                </select>
+            </p>
+            <p>
+                Cache mode:
+                <select id="modal-cache" class="round">
+                    <option value="default">Default</option>
+                    <option value="no-store">No store</option>
+                    <option value="reload">Reload</option>
+                    <option value="no-cache">No cache</option>
+                    <option value="force-cache">Force cache</option>
+                    <option value="only-if-cached">Only if cached</option>
+                </select>
+            </p>
+            <p>
+                Redirect mode:
+                <select id="modal-redirect" class="round">
+                    <option value="follow">Follow</option>
+                    <option value="error">Error</option>
+                    <option value="manual">Manual</option>
+                </select>
+            </p>
         </div>
-
     </div>
 
     <script src="js/request.js"></script>

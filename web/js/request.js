@@ -31,12 +31,12 @@ async function sendRequest() {
         var op_req = document.getElementById("op-req");
         var operation = op_req.options[op_req.selectedIndex].text;
 
-        if (operation == "GET" || operation == "HEAD") {
-            var settings = {
-                method: operation
-            }
+        var settings = {
+            method: operation
+        }
 
-            // Show error if GET or HEAD methods have body
+        // Show error if GET or HEAD methods have body
+        if (operation == "GET" || operation == "HEAD") {
             if (body_value != "" && body_value != null){
                 document.getElementById('error-req').innerHTML = "Body data omitted because you selected method " + operation;
                 body_req.style.borderColor = "red";
@@ -46,14 +46,24 @@ async function sendRequest() {
                 body_req.style.borderColor = "#a9a9a9";
             }
         } else {
-            var settings = {
-                method: operation,
-                body: body_value
-            }
+            settings.body = body_value;
 
             // Reset the errors related with filling the body textarea
             body_req.style.borderColor = "#a9a9a9";
         }
+
+        // Get the advanced options of the modal
+        var modal_mode = document.getElementById("modal-mode");
+        settings.mode = modal_mode.options[modal_mode.selectedIndex].value;
+
+        var modal_credentials = document.getElementById("modal-credentials");
+        settings.credentials = modal_credentials.options[modal_credentials.selectedIndex].value;
+
+        var modal_cache = document.getElementById("modal-cache");
+        settings.cache = modal_cache.options[modal_cache.selectedIndex].value;
+
+        var modal_redirect = document.getElementById("modal-redirect");
+        settings.redirect = modal_redirect.options[modal_redirect.selectedIndex].value;
 
         // Show loading icon
         document.getElementById("overlap-loading").style.display = "block";
@@ -67,7 +77,7 @@ async function sendRequest() {
                 // Check if it's a JSON response
                 if (contentType && contentType.indexOf("application/json") !== -1) {
                     return response.json().then(data => {
-                        
+
                         // Show the result
                         output_div.style.display = "block";
                         result_div.innerHTML = JSON.stringify(data, null, 4);
