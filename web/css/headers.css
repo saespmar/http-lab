@@ -1,0 +1,77 @@
+#headers-list {
+    margin: 0;
+    padding: 0;
+    max-height: 30%;
+    overflow-y: overlay;
+    overflow-x: hidden;
+}
+
+#headers-list li {
+    position: relative;
+    padding: 12px 8px;
+    list-style-type: none;
+    background: #eee;
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+#headers-list li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+li p {
+    margin: 0px; 
+    position: relative; 
+    left: 40px
+}
+
+li p span:first-child{
+    font-weight: bold; 
+}
+
+.close2 {
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px;
+}
+
+.close2:hover {
+    background-color: #f44336;
+    color: white;
+    cursor: pointer;
+}
+
+#headers-form {
+    padding: 10px 0px;
+}
+
+/* Clear floats after the header */
+#headers-form:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+#headers-form input {
+    width: 48%;
+    padding: 10px;
+    margin: 0% 1%;
+    float: left;
+    font-size: 16px;
+}
+
+.addBtn {
+    margin-top: 5px;
+    margin-right: 1%;
+    padding: 10px;
+    background: #d9d9d9;
+    color: #555;
+    float: right;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.addBtn:hover {
+    background-color: #bbb;
+}
