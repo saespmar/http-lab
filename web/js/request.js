@@ -62,14 +62,23 @@ async function sendRequest() {
         try {
             var result = await fetch(url, settings)
             .then((response) => {
-                return response.json();
-            }).then((data) => {
-                return data;
-            }); 
+                const contentType = response.headers.get("content-type");
 
-            // Show the result
-            output_div.style.display = "block";
-            result_div.innerHTML = JSON.stringify(result, null, 4);
+                // Check if it's a JSON response
+                if (contentType && contentType.indexOf("application/json") !== -1) {
+                    return response.json().then(data => {
+                        
+                        // Show the result
+                        output_div.style.display = "block";
+                        result_div.innerHTML = JSON.stringify(data, null, 4);
+                    });
+                } else {
+                    return response.text().then(text => {
+                        output_div.style.display = "block";
+                        result_div.innerHTML = text;
+                    });
+                }
+            });
         } catch (error) {
             alert("Something went wrong");
         }
