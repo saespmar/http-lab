@@ -80,12 +80,12 @@ async function sendRequest() {
 
                         // Show the result
                         output_div.style.display = "block";
-                        result_div.innerHTML = JSON.stringify(data, null, 4);
+                        result_div.textContent = JSON.stringify(data, null, 4);
                     });
                 } else {
                     return response.text().then(text => {
                         output_div.style.display = "block";
-                        result_div.innerHTML = text;
+                        result_div.textContent = text;
                     });
                 }
             });
