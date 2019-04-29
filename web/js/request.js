@@ -65,6 +65,18 @@ async function sendRequest() {
         var modal_redirect = document.getElementById("modal-redirect");
         settings.redirect = modal_redirect.options[modal_redirect.selectedIndex].value;
 
+        // Add the headers, if necessary
+        var ul = document.getElementById("headers-list");
+        var items = ul.getElementsByTagName("li");
+        if (items.length > 0){
+            var headers = new Headers();
+            for (var i = 0; i < items.length; i++) {
+                var spanList = items[i].getElementsByTagName("p")[0].getElementsByTagName("span"); 
+                headers.append(spanList[0].textContent, spanList[2].textContent);
+            }
+            settings.headers = headers;
+        }
+
         // Show loading icon
         document.getElementById("overlap-loading").style.display = "block";
 
