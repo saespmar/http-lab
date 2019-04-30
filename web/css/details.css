@@ -75,3 +75,9 @@ button:hover {
     overflow-x: auto;
     white-space: nowrap;
 }
+
+/* Don't break the page horizontally if the response is too large */
+#metadata p,
+#output pre {
+    max-width: 1px;
+}
