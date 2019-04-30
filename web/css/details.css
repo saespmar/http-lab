@@ -61,17 +61,17 @@ button:hover {
 }
 
 #output {
-    margin: 20px;
+    margin: 15px;
 
     /* Initially hidden */
     display: none;
 }
 
 #output div {
-    background-color: white;
-    border: 2px solid black;
+    background-color: rgb(171, 207, 192);
     border-radius: 20px;
     padding: 10px;
+    margin: 5px 0px;
     overflow-x: auto;
     white-space: nowrap;
 }

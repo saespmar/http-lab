@@ -3,6 +3,8 @@ async function sendRequest() {
     // Delete previous requests data
     var output_div = document.getElementById("output");
     output_div.style.display = "none";
+    var metadata_div = document.getElementById("metadata");
+    metadata_div.innerHTML = "";
     var result_div = document.getElementById("result");
     result_div.innerHTML = "";
 
@@ -84,9 +86,28 @@ async function sendRequest() {
         try {
             var result = await fetch(url, settings)
             .then((response) => {
-                const contentType = response.headers.get("content-type");
+
+                // Show metadata
+                var p = document.createElement("p");
+                p.textContent = 'Status: ' + response.status + ' ' + response.statusText;
+                metadata_div.appendChild(p);
+
+                p = document.createElement("p");
+                p.textContent = 'Response Type: ' + response.type;
+                metadata_div.appendChild(p);
+
+                p = document.createElement("p");
+                p.textContent = 'Request URL: ' + response.url;
+                metadata_div.appendChild(p);
+                
+                for (var pair of response.headers.entries()) {
+                    p = document.createElement("p");
+                    p.textContent = pair[0]+ ': '+ pair[1];
+                    metadata_div.appendChild(p);
+                }
 
                 // Check if it's a JSON response
+                const contentType = response.headers.get("content-type");
                 if (contentType && contentType.indexOf("application/json") !== -1) {
                     return response.json().then(data => {
 
