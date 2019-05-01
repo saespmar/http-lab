@@ -16,10 +16,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 You don't need to install anything in order to make the web application run. Opening the [main page](/web/index.html) with any web browser is enough. 
 
-However, this project can be portable and can have a test REST service included. In this case, you need to install:
-* Any PHP server (Apache, Nginx...)
-* MongoDB
-* Docker **_[To be included]_**
+However, this project can be portable and can have a test REST service included. In this case, you need to install **Docker** **_[To be included]_**.
 
 ### Installing
 
