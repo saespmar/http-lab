@@ -1,6 +1,6 @@
 <?php
 
-$host = 'localhost';
+$host = 'database';
 $port = '27017';
 $dbName = 'httplab';
 

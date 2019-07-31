@@ -1,0 +1,17 @@
+version: '2'
+services:
+  database:
+    container_name: http_lab_mongodb
+    image: mongo:4.0-xenial
+    ports:
+      - 27017:27017
+    restart: always
+  webserver:
+    container_name: http_lab_php
+    image: php7mongodb:latest
+    build:
+      context: ./
+    ports:
+      - 80:80
+    depends_on:
+      - database
